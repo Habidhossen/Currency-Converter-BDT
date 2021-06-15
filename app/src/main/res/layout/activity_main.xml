@@ -4,10 +4,451 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:background="@drawable/header_background"
+        android:orientation="vertical">
 
+        <TextView
+            android:fontFamily="@font/ninito_extrabold"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
 
+        <EditText
+            android:id="@+id/enterAmountEditTextId"
+            android:background="@drawable/edit_text_bg"
+            android:fontFamily="@font/nunito_regular"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="25dp"
+            android:hint="Enter Amount (BDT)"
+            android:inputType="numberDecimal"
+            android:padding="10dp"
+            android:textColorHint="#ffffff" />
 
+        <LinearLayout
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="25dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/clearBtnId"
+                android:text="@string/clear_btn"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="14sp"
+                android:textColor="#ffffff"
+                android:textAllCaps="false"
+                android:background="@drawable/button_2"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="35dp"/>
+
+            <Button
+                android:id="@+id/convertBtnId"
+                android:text="@string/convert_btn"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="14sp"
+                android:textColor="#3f2b96"
+                android:textAllCaps="false"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/button_1"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="35dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:background="@drawable/footer_bg_1"
+                android:layout_marginTop="3dp"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_A"
+                    android:text="@string/euro"/>
+
+                <TextView
+                    android:id="@+id/euroTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_A"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="3dp"
+                android:background="@drawable/footer_bg_2"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_B"
+                    android:text="@string/us_dollar"/>
+
+                <TextView
+                    android:id="@+id/usDollarTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_B"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/footer_bg_1"
+                android:layout_marginTop="3dp"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_A"
+                    android:text="@string/australian_dollar"/>
+
+                <TextView
+                    android:id="@+id/australianTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_A"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="3dp"
+                android:background="@drawable/footer_bg_2"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_B"
+                    android:text="@string/canadian_dollar"/>
+
+                <TextView
+                    android:id="@+id/canadianTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_B"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/footer_bg_1"
+                android:layout_marginTop="3dp"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_A"
+                    android:text="@string/singapore_dollar"/>
+
+                <TextView
+                    android:id="@+id/singaporeTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_A"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="3dp"
+                android:background="@drawable/footer_bg_2"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_B"
+                    android:text="@string/british_pound"/>
+
+                <TextView
+                    android:id="@+id/britishPoundTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_B"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/footer_bg_1"
+                android:layout_marginTop="3dp"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_A"
+                    android:text="@string/egyptian_pound"/>
+
+                <TextView
+                    android:id="@+id/egyptianPoundTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_A"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="3dp"
+                android:background="@drawable/footer_bg_2"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_B"
+                    android:text="@string/uae_dirham"/>
+
+                <TextView
+                    android:id="@+id/uaeDirhamTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_B"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/footer_bg_1"
+                android:layout_marginTop="3dp"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_A"
+                    android:text="@string/qatari_rial"/>
+
+                <TextView
+                    android:id="@+id/qatarRiyalTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_A"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="3dp"
+                android:background="@drawable/footer_bg_2"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_B"
+                    android:text="@string/saudi_rial"/>
+
+                <TextView
+                    android:id="@+id/saudiRiyalTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_B"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/footer_bg_1"
+                android:layout_marginTop="3dp"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_A"
+                    android:text="@string/omani_rial"/>
+
+                <TextView
+                    android:id="@+id/omaniRiyalTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_A"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="3dp"
+                android:background="@drawable/footer_bg_2"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_B"
+                    android:text="@string/bahraini_dinar"/>
+
+                <TextView
+                    android:id="@+id/bahrainiDinarTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_B"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/footer_bg_1"
+                android:layout_marginTop="3dp"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_A"
+                    android:text="@string/kuwaiti_dinar"/>
+
+                <TextView
+                    android:id="@+id/kuwaitiDinarTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_A"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="3dp"
+                android:background="@drawable/footer_bg_2"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_B"
+                    android:text="@string/indian_rupee"/>
+
+                <TextView
+                    android:id="@+id/indianRupeeTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_B"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/footer_bg_1"
+                android:layout_marginTop="3dp"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_A"
+                    android:text="@string/pakistan_rupee"/>
+
+                <TextView
+                    android:id="@+id/pakistanRupeeTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_A"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="3dp"
+                android:background="@drawable/footer_bg_2"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_B"
+                    android:text="@string/srilankan_rupee"/>
+
+                <TextView
+                    android:id="@+id/srilankanTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_B"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/footer_bg_1"
+                android:layout_marginTop="3dp"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_A"
+                    android:text="@string/nepalese_rupee"/>
+
+                <TextView
+                    android:id="@+id/nepaleseRupeeTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_A"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="3dp"
+                android:background="@drawable/footer_bg_2"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_B"
+                    android:text="@string/myanmar_kyat"/>
+
+                <TextView
+                    android:id="@+id/myanmarKyatTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_B"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@drawable/footer_bg_1"
+                android:layout_marginTop="3dp"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_A"
+                    android:text="@string/japanese_yen"/>
+
+                <TextView
+                    android:id="@+id/japaneseYenTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_A"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="3dp"
+                android:background="@drawable/footer_bg_2"
+                style="@style/Text_Layout_Style">
+
+                <TextView
+                    android:gravity="center|start"
+                    style="@style/TextView_Style_B"
+                    android:text="@string/thailand_baht"/>
+
+                <TextView
+                    android:id="@+id/thailandbahtTVId"
+                    android:gravity="center"
+                    style="@style/TextView_Style_B"
+                    android:text="0.00"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
